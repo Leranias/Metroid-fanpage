@@ -2,7 +2,7 @@
     body {
         /* Ersetzt background, text, link, vlink, alink Attribute */
         background-color: #000;
-        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTk3eWVzMzdsbHZhNTQ4ZGluam55NXlqbzVyN3A4cThkYXhjNTl1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U3qYN8S0j3bpK/giphy.gif');
+        background-image: url('images/space.gif');
         color: #fff;
         font-family: Verdana, sans-serif; /* Standard-Schriftart für die ganze Seite */
     }
@@ -14,10 +14,10 @@
     
     /* === LAYOUT-CONTAINER (Ersetzt die Haupt-Layout-Tabelle) === */
     .container {
-        max-width: 960px; /* Feste Breite wie die alte Tabelle */
+        max-width: 980; /* Feste Breite wie die alte Tabelle */
         margin: 0 auto; /* Zentriert die Seite horizontal */
         background-color: rgba(35, 4, 4,0.9);
-        border: 1px solid #333; /* Ein dezenter Rahmen */
+        border: 2px solid #333; /* Ein dezenter Rahmen */
     }
 
     /* === HEADER-BEREICH === */
@@ -67,7 +67,7 @@
     .main-layout {
         display: flex;
         padding: 10px;
-        gap: 15px; /* Abstand zwischen den Spalten */
+        gap: 10px; /* Abstand zwischen den Spalten */
     }
     .sidebar {
         flex-basis: 320px; /* Feste Breite für die Sidebar */
@@ -86,8 +86,8 @@
     .content-box {
         border: 2px solid #ffe100;
         background-color: #06062a;
-        padding: 50px;
-        margin-bottom: 20px; /* Abstand zwischen den Boxen */
+        padding: 60px;
+        margin-bottom: 30px; /* Abstand zwischen den Boxen */
     }
     .content-box h3 {
         color: #FF9900;
@@ -97,7 +97,7 @@
     /* === BILDER & TYPOGRAPHIE === */
     .cover-image {
         max-width: 100%;
-        border: 0;
+        border: 2;
     }
     .cover-caption {
         text-align: center;
