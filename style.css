@@ -14,7 +14,7 @@
     
     /* === LAYOUT-CONTAINER (Ersetzt die Haupt-Layout-Tabelle) === */
     .container {
-        max-width: 980; /* Feste Breite wie die alte Tabelle */
+        max-width: 940px; /* Feste Breite wie die alte Tabelle */
         margin: 0 auto; /* Zentriert die Seite horizontal */
         background-color: rgba(35, 4, 4,0.9);
         border: 2px solid #333; /* Ein dezenter Rahmen */
@@ -83,15 +83,17 @@
         background-color: #06062a;
         padding: 15px;
     }
+    /*DIESE box steuert die felder mit den infos*/
     .content-box {
         border: 2px solid #ffe100;
         background-color: #06062a;
-        padding: 60px;
-        margin-bottom: 30px; /* Abstand zwischen den Boxen */
+        padding: 10px;
+        margin-bottom: 25px; /* Abstand zwischen den Boxen */
     }
     .content-box h3 {
         color: #FF9900;
         margin-top: 0;
+        text-align: center;
     }
 
     /* === BILDER & TYPOGRAPHIE === */
@@ -125,9 +127,10 @@
     }
     /*einfach igno da teste ich mit rum */
     .img-center {
-        float: none;
-        margin: 0;
-        margin-bottom: auto;
+        display: block;
+        margin-left: auto ;
+        margin-right: auto;
+        width: 50% ;
     }
     /* === FOOTER === */
     .footer {
