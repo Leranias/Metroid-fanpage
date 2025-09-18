@@ -1,0 +1,200 @@
+   /* === GRUNDEINSTELLUNGEN (KISS: Globale Regeln an einem Ort) === */
+    body {
+        /* Ersetzt background, text, link, vlink, alink Attribute */
+        background-color: #000;
+        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTk3eWVzMzdsbHZhNTQ4ZGluam55NXlqbzVyN3A4cThkYXhjNTl1ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U3qYN8S0j3bpK/giphy.gif');
+        color: #fff;
+        font-family: Verdana, sans-serif; /* Standard-Schriftart für die ganze Seite */
+    }
+
+    /* Standard-Styling für Links */
+    a { color: #66ffff; }
+    a:visited { color: #FF00FF; }
+    a:active { color: #ffff00; }
+    
+    /* === LAYOUT-CONTAINER (Ersetzt die Haupt-Layout-Tabelle) === */
+    .container {
+        max-width: 960px; /* Feste Breite wie die alte Tabelle */
+        margin: 0 auto; /* Zentriert die Seite horizontal */
+        background-color: rgba(35, 4, 4,0.9);
+        border: 1px solid #333; /* Ein dezenter Rahmen */
+    }
+
+    /* === HEADER-BEREICH === */
+    .header {
+        display: flex; /* Moderne Art, Elemente nebeneinander anzuordnen */
+        align-items: center; /* Zentriert Elemente vertikal */
+        padding: 10px;
+        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
+        background-size: cover;
+    }
+    .header-logo {
+        width: 120px;
+        margin-right: 20px;
+    }
+    .header h1 {
+        font-family: "Impact", "Arial Black", sans-serif;
+        font-size: 3.5em; /* Skalierbare Schriftgröße statt fester "size=7" */
+        color: #FF9900;
+        margin: 0;
+    }
+    .header h2 {
+        font-family: Arial, sans-serif;
+        font-size: 1.5em;
+        color: #CCCCCC;
+        margin: 0;
+    }
+
+    /* === TICKER (Ersatz für <marquee>) === */
+    .ticker {
+        background-color: #111111;
+        padding: 10px;
+        overflow: hidden; /* Versteckt den Text, der außerhalb ist */
+        white-space: nowrap; /* Verhindert Zeilenumbruch */
+    }
+    .ticker-text {
+        color: #00ff00;
+        font-size: 1.1em;
+        display: inline-block; /* Notwendig für die Animation */
+        animation: scroll-left 25s linear infinite;
+    }
+    @keyframes scroll-left {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* === ZWEISPALTIGES HAUPT-LAYOUT (Sidebar & Main Content) === */
+    .main-layout {
+        display: flex;
+        padding: 10px;
+        gap: 15px; /* Abstand zwischen den Spalten */
+    }
+    .sidebar {
+        flex-basis: 320px; /* Feste Breite für die Sidebar */
+        flex-shrink: 0;
+    }
+    .main-content {
+        flex-grow: 1; /* Nimmt den restlichen Platz ein */
+    }
+
+    /* === INHALTSBOXEN (DRY: Diese Klasse ersetzt alle verschachtelten Tabellen) === */
+    .sidebar-box {
+        border: 1px solid #ffe100;
+        background-color: #06062a;
+        padding: 15px;
+    }
+    .content-box {
+        border: 2px solid #ffe100;
+        background-color: #06062a;
+        padding: 50px;
+        margin-bottom: 20px; /* Abstand zwischen den Boxen */
+    }
+    .content-box h3 {
+        color: #FF9900;
+        margin-top: 0;
+    }
+
+    /* === BILDER & TYPOGRAPHIE === */
+    .cover-image {
+        max-width: 100%;
+        border: 0;
+    }
+    .cover-caption {
+        text-align: center;
+        font-size: 0.8em;
+        color: #AAAAAA;
+        font-style: italic;
+    }
+    hr {
+        border: none;
+        border-top: 1px solid #00ffff;
+    }
+    ul {
+        list-style-type: square; /* Oder ein anderes passendes Symbol */
+        padding-left: 20px;
+    }
+    .img-left {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+    .img-right {
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 5px;
+    }
+    /*einfach igno da teste ich mit rum */
+    .img-center {
+        float: none;
+        margin: 0;
+        margin-bottom: auto;
+    }
+    /* === FOOTER === */
+    .footer {
+        text-align: center;
+        padding: 20px;
+        color: #AAAAAA;
+        font-size: 0.9em;
+        border-top: 2px solid #FF9900;
+    }  
+
+/* Fünf individuelle Flugpläne für maximale Abwechslung */
+@keyframes fly-across-1 {
+    0% { transform: translateX(-150px) translateY(10vh) rotate(-15deg); opacity: 0.6; }
+    100% { transform: translateX(100vw) translateY(80vh) rotate(15deg); opacity: 0.6; }
+}
+@keyframes fly-across-2 {
+    0% { transform: translateX(-150px) translateY(50vh) rotate(5deg); opacity: 0.5; }
+    100% { transform: translateX(100vw) translateY(20vh) rotate(-5deg); opacity: 0.5; }
+}
+@keyframes fly-across-3 {
+    0% { transform: translateX(-150px) translateY(85vh) rotate(10deg); opacity: 0.4; }
+    100% { transform: translateX(100vw) translateY(40vh) rotate(0deg); opacity: 0.4; }
+}
+@keyframes fly-across-4 {
+    0% { transform: translateX(-150px) translateY(30vh) rotate(-5deg); opacity: 0.6; }
+    100% { transform: translateX(100vw) translateY(60vh) rotate(10deg); opacity: 0.6; }
+}
+@keyframes fly-across-5 {
+    0% { transform: translateX(-150px) translateY(70vh) rotate(0deg); opacity: 0.7; }
+    100% { transform: translateX(100vw) translateY(15vh) rotate(-10deg); opacity: 0.3; }
+}
+
+/* Die Basis-Klasse: Nur die Eigenschaften, die ALLE Objekte teilen */
+.floating-object {
+    position: fixed; /* KORREKT: fixed statt relative */
+    z-index: -1;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Individuelle Stile: Jedes Objekt bekommt seinen eigenen Look & Flugplan */
+.type-1 {
+    width: 120px;
+    animation-name: fly-across-1;
+    animation-duration: 20s;
+}
+.type-2 {
+    width: 50px;
+    animation-name: fly-across-2;
+    animation-duration: 9s;
+    animation-delay: -5s; /* KORREKT: Einheit 's' hinzugefügt */
+}
+.type-3 {
+    width: 80px;
+    animation-name: fly-across-3;
+    animation-duration: 14s;
+    animation-delay: -10s; /* KORREKT: Einheit 's' hinzugefügt */
+}
+.type-4 {
+    width: 100px;
+    animation-name: fly-across-4;
+    animation-duration: 22s;
+    animation-delay: -8s; /* KORREKT: Einheit 's' hinzugefügt */
+}
+.type-5 {
+    width: 140px;
+    animation-name: fly-across-5;
+    animation-duration: 12s;
+    animation-delay: -2s; /* KORREKT: Einheit 's' hinzugefügt */
+}
