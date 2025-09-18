@@ -140,7 +140,41 @@
         font-size: 0.9em;
         border-top: 2px solid #FF9900;
     }  
-
+    .intro-text {
+    font-size: 1.1em;     /* Etwas größer als der normale Text */
+    font-style: italic;   /* Kursiv setzen */
+    color: #FF9900;     /* Die Akzentfarbe deiner Überschriften */
+    text-align: center;      
+    
+}
+.text-colorpowerbeam{
+    color: #ffe500;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #FF9900;
+}
+.text-colorwavebeam{
+    color: #ff01c4;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #FF9900;
+}
+.text-coloricebeam{
+    color: #11b3d8;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #FF9900;
+}
+.text-colorplasmabeam{
+    color: #ef0505;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #FF9900;
+}
 /* Fünf individuelle Flugpläne für maximale Abwechslung */
 @keyframes fly-across-1 {
     0% { transform: translateX(-150px) translateY(10vh) rotate(-15deg); opacity: 0.6; }
