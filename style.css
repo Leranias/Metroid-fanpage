@@ -1,181 +1,173 @@
-   /* === GRUNDEINSTELLUNGEN (KISS: Globale Regeln an einem Ort) === */
-    body {
-        /* Ersetzt background, text, link, vlink, alink Attribute */
-        background-color: #000;
-        background-image: url('images/space.gif');
-        color: #fff;
-        font-family: Verdana, sans-serif; /* Standard-Schriftart für die ganze Seite */
-    }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    /* Standard-Styling für Links */
-    a { color: #66ffff; }
-    a:visited { color: #FF00FF; }
-    a:active { color: #ffff00; }
-    
-    /* === LAYOUT-CONTAINER (Ersetzt die Haupt-Layout-Tabelle) === */
-    .container {
-        max-width: 940px; /* Feste Breite wie die alte Tabelle */
-        margin: 0 auto; /* Zentriert die Seite horizontal */
-        background-color: rgba(35, 4, 4,0.9);
-        border: 2px solid #333; /* Ein dezenter Rahmen */
-    }
-
-    /* === HEADER-BEREICH === */
-    .header {
-        display: flex; /* Moderne Art, Elemente nebeneinander anzuordnen */
-        align-items: center; /* Zentriert Elemente vertikal */
-        padding: 10px;
-        background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
-        background-size: cover;
-    }
-    .header-logo {
-        width: 120px;
-        margin-right: 20px;
-    }
-    .header h1 {
-        font-family: "Impact", "Arial Black", sans-serif;
-        font-size: 3.5em; /* Skalierbare Schriftgröße statt fester "size=7" */
-        color: #FF9900;
-        margin: 0;
-    }
-    .header h2 {
-        font-family: Arial, sans-serif;
-        font-size: 1.5em;
-        color: #CCCCCC;
-        margin: 0;
-    }
-
-    /* === TICKER (Ersatz für <marquee>) === */
-    .ticker {
-        background-color: #111111;
-        padding: 10px;
-        overflow: hidden; /* Versteckt den Text, der außerhalb ist */
-        white-space: nowrap; /* Verhindert Zeilenumbruch */
-    }
-    .ticker-text {
-        color: #00ff00;
-        font-size: 1.1em;
-        display: inline-block; /* Notwendig für die Animation */
-        animation: scroll-left 25s linear infinite;
-    }
-    @keyframes scroll-left {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
-    }
-
-    /* === ZWEISPALTIGES HAUPT-LAYOUT (Sidebar & Main Content) === */
-    .main-layout {
-        display: flex;
-        padding: 10px;
-        gap: 10px; /* Abstand zwischen den Spalten */
-    }
-    .sidebar {
-        flex-basis: 320px; /* Feste Breite für die Sidebar */
-        flex-shrink: 0;
-    }
-    .main-content {
-        flex-grow: 1; /* Nimmt den restlichen Platz ein */
-    }
-
-    /* === INHALTSBOXEN (DRY: Diese Klasse ersetzt alle verschachtelten Tabellen) === */
-    .sidebar-box {
-        border: 1px solid #ffe100;
-        background-color: #06062a;
-        padding: 15px;
-    }
-    /*DIESE box steuert die felder mit den infos*/
-    .content-box {
-        border: 2px solid #ffe100;
-        background-color: #06062a;
-        padding: 10px;
-        margin-bottom: 25px; /* Abstand zwischen den Boxen */
-    }
-    .content-box h3 {
-        color: #FF9900;
-        margin-top: 0;
-        text-align: center;
-    }
-
-    /* === BILDER & TYPOGRAPHIE === */
-    .cover-image {
-        max-width: 100%;
-        border: 2;
-    }
-    .cover-caption {
-        text-align: center;
-        font-size: 0.8em;
-        color: #AAAAAA;
-        font-style: italic;
-    }
-    hr {
-        border: none;
-        border-top: 1px solid #00ffff;
-    }
-    ul {
-        list-style-type: square; /* Oder ein anderes passendes Symbol */
-        padding-left: 20px;
-    }
-    .img-left {
-        float: left;
-        margin-right: 15px;
-        margin-bottom: 5px;
-    }
-    .img-right {
-        float: right;
-        margin-left: 15px;
-        margin-bottom: 5px;
-    }
-    /*einfach igno da teste ich mit rum */
-    .img-center {
-        display: block;
-        margin-left: auto ;
-        margin-right: auto;
-        width: 50% ;
-    }
-    /* === FOOTER === */
-    .footer {
-        text-align: center;
-        padding: 20px;
-        color: #AAAAAA;
-        font-size: 0.9em;
-        border-top: 2px solid #FF9900;
-    }  
-    .intro-text {
-    font-size: 1.1em;     /* Etwas größer als der normale Text */
-    font-style: italic;   /* Kursiv setzen */
-    color: #FF9900;     /* Die Akzentfarbe deiner Überschriften */
-    text-align: center;      
-    
+/* === GRUNDEINSTELLUNGEN === */
+body {
+    background-color: #000;
+    background-image: url('images/space.gif');
+    color: #fff;
+    font-family: 'Roboto', Verdana, sans-serif;
 }
-.text-colorpowerbeam{
-    color: #ffe500;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #FF9900;
+
+/* === LINKS === */
+a { 
+    color: #66ffff; 
+    transition: color 0.2s ease-in-out;
 }
-.text-colorwavebeam{
+a:hover {
     color: #ff01c4;
+}
+a:visited { color: #FF00FF; }
+a:active { color: #ffff00; }
+
+/* === LAYOUT-CONTAINER === */
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    background-color: rgba(2, 38, 45, 0.9);
+    border: 2px solid #333;
+}
+
+/* === HEADER-BEREICH === */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #06062a;
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
+    background-size: cover;
+}
+.header-logo {
+    width: 120px;
+    margin-right: 20px;
+}
+.header h1 {
+    font-family: "Impact", "Arial Black", sans-serif;
+    font-size: 3.5em;
+    color: #FF9900;
+    margin: 0;
+}
+.header h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    color: #CCCCCC;
+    margin: 0;
+}
+
+/* === TICKER === */
+.ticker {
+    background-color: #111111;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.ticker-text {
+    color: #00ff00;
+    font-size: 1.1em;
+    display: inline-block;
+    animation: scroll-left 25s linear infinite;
+}
+@keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* === HAUPT-LAYOUT === */
+.main-layout {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+.sidebar {
+    flex-basis: 320px;
+    flex-shrink: 0;
+}
+.main-content {
+    flex-grow: 1;
+}
+
+/* === INHALTSBOXEN (MODERNISIERT) === */
+.sidebar-box, .content-box {
+    background-color: #06062a;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    border: 1px solid #ffe100;
+    box-shadow: 0 0 10px rgba(105, 208, 255, 0.6); /* DEIN GLOW-EFFEKT */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Bugfix: 0.3s */
+}
+
+.sidebar-box:hover, .content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8); /* INTENSIVERER GLOW */
+}
+
+.content-box h3 {
+    color: #FF9900;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* === WAFFEN-SEKTION (GRID-LAYOUT) === */
+.weapon-progression {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.weapon-item {
+    text-align: center;
+}
+.weapon-item img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* === BILDER & TYPOGRAPHIE === */
+hr {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 225, 0, 0), rgba(255, 225, 0, 0.75), rgba(255, 225, 0, 0));
+    margin: 20px 0;
+}
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === TEXT-STILE (REFAKTURIERT) === */
+.intro-text {
+    font-size: 1.1em;
+    font-style: italic;
+    color: #FF9900;
+    text-align: center;
+}
+.weapon-name {
     font-size: 1.2em;
     font-weight: bold;
     text-decoration-line: underline;
     text-decoration-color: #FF9900;
+    display: block;
+    margin-bottom: 5px;
 }
-.text-coloricebeam{
-    color: #11b3d8;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #FF9900;
+.color-powerbeam { color: #ffe500; }
+.color-wavebeam { color: #ff01c4; }
+.color-icebeam { color: #11b3d8; }
+.color-plasmabeam { color: #ef0505; }
+
+/* === FOOTER === */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #AAAAAA;
+    font-size: 0.9em;
+    border-top: 2px solid #FF9900;
 }
-.text-colorplasmabeam{
-    color: #ef0505;
-    font-size: 1.2em;
-    font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #FF9900;
-}
-/* Fünf individuelle Flugpläne für maximale Abwechslung */
+
+/* === HINTERGRUND-ANIMATIONEN === */
 @keyframes fly-across-1 {
     0% { transform: translateX(-150px) translateY(10vh) rotate(-15deg); opacity: 0.6; }
     100% { transform: translateX(100vw) translateY(80vh) rotate(15deg); opacity: 0.6; }
@@ -196,16 +188,12 @@
     0% { transform: translateX(-150px) translateY(70vh) rotate(0deg); opacity: 0.7; }
     100% { transform: translateX(100vw) translateY(15vh) rotate(-10deg); opacity: 0.3; }
 }
-
-/* Die Basis-Klasse: Nur die Eigenschaften, die ALLE Objekte teilen */
 .floating-object {
-    position: fixed; /* KORREKT: fixed statt relative */
+    position: fixed;
     z-index: -1;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-
-/* Individuelle Stile: Jedes Objekt bekommt seinen eigenen Look & Flugplan */
 .type-1 {
     width: 120px;
     animation-name: fly-across-1;
@@ -215,23 +203,23 @@
     width: 50px;
     animation-name: fly-across-2;
     animation-duration: 9s;
-    animation-delay: -5s; /* KORREKT: Einheit 's' hinzugefügt */
+    animation-delay: -5s;
 }
 .type-3 {
     width: 80px;
     animation-name: fly-across-3;
     animation-duration: 14s;
-    animation-delay: -10s; /* KORREKT: Einheit 's' hinzugefügt */
+    animation-delay: -10s;
 }
 .type-4 {
     width: 100px;
     animation-name: fly-across-4;
     animation-duration: 22s;
-    animation-delay: -8s; /* KORREKT: Einheit 's' hinzugefügt */
+    animation-delay: -8s;
 }
 .type-5 {
     width: 140px;
     animation-name: fly-across-5;
     animation-duration: 12s;
-    animation-delay: -2s; /* KORREKT: Einheit 's' hinzugefügt */
+    animation-delay: -2s;
 }
