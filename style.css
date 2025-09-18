@@ -6,6 +6,7 @@ body {
     background-image: url('images/space.gif');
     color: #fff;
     font-family: 'Roboto', Verdana, sans-serif;
+    margin: 0;
 }
 
 /* === LINKS === */
@@ -16,23 +17,25 @@ a {
 a:hover {
     color: #ff01c4;
 }
-a:visited { color: #FF00FF; }
-a:active { color: #ffff00; }
+a:visited { 
+    color: #FF00FF; 
+}
+a:active { 
+    color: #ffff00; 
+}
 
-/* === LAYOUT-CONTAINER === */
+/* === LAYOUT-CONTAINER (Zentrierung) === */
 .container {
     max-width: 980px;
     margin: 0 auto;
-    background-color: rgba(2, 38, 45, 0.9);
-    border: 2px solid #333;
+    padding: 0 20px;
 }
 
-/* === HEADER-BEREICH === */
+/* === HEADER & FOOTER (Full-Width) === */
 .header {
     display: flex;
     align-items: center;
-    padding: 10px;
-    background-color: #06062a;
+    padding: 10px 20px;
     background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
     background-size: cover;
 }
@@ -51,6 +54,13 @@ a:active { color: #ffff00; }
     font-size: 1.5em;
     color: #CCCCCC;
     margin: 0;
+}
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #AAAAAA;
+    font-size: 0.9em;
+    border-top: 2px solid #FF9900;
 }
 
 /* === TICKER === */
@@ -71,48 +81,70 @@ a:active { color: #ffff00; }
     100% { transform: translateX(-100%); }
 }
 
-/* === HAUPT-LAYOUT === */
-.main-layout {
-    display: flex;
-    padding: 20px;
-    gap: 20px;
+/* === HERO-SEKTION === */
+.hero-section {
+    padding: 30px 0;
+    text-align: center;
 }
-.sidebar {
-    flex-basis: 320px;
-    flex-shrink: 0;
+.hero-section .cover-image {
+    max-width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8);
 }
-.main-content {
-    flex-grow: 1;
+.cover-caption {
+    text-align: center;
+    font-size: 0.8em;
+    color: #AAAAAA;
+    font-style: italic;
 }
 
-/* === INHALTSBOXEN (MODERNISIERT) === */
-.sidebar-box, .content-box {
+/* === STICKY NAVIGATION === */
+.nav-sticky {
+    position: sticky;
+    top: 0;
+    background-color: rgba(2, 38, 45, 0.95);
+    padding: 10px 0;
+    z-index: 10;
+    border-bottom: 1px solid #ffe100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+.nav-sticky ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* === HAUPT-INHALT === */
+.main-content {
+    padding-top: 30px;
+}
+.content-box {
     background-color: #06062a;
     padding: 30px;
     margin-bottom: 25px;
     border-radius: 8px;
     border: 1px solid #ffe100;
-    box-shadow: 0 0 10px rgba(105, 208, 255, 0.6); /* DEIN GLOW-EFFEKT */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Bugfix: 0.3s */
+    box-shadow: 0 0 10px rgba(105, 208, 255, 0.6);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
-.sidebar-box:hover, .content-box:hover {
+.content-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8); /* INTENSIVERER GLOW */
+    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8);
 }
-
 .content-box h3 {
     color: #FF9900;
     margin-top: 0;
     text-align: center;
 }
 
-/* === WAFFEN-SEKTION (GRID-LAYOUT) === */
+/* === WAFFEN-SEKTION (GRID) === */
 .weapon-progression {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-bottom: 20px;
 }
 .weapon-item {
     text-align: center;
@@ -123,27 +155,6 @@ a:active { color: #ffff00; }
     height: auto;
     display: block;
     margin: 10px auto;
-}
-
-/* === BILDER & TYPOGRAPHIE === */
-hr {
-    border: none;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(255, 225, 0, 0), rgba(255, 225, 0, 0.75), rgba(255, 225, 0, 0));
-    margin: 20px 0;
-}
-.img-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* === TEXT-STILE (REFAKTURIERT) === */
-.intro-text {
-    font-size: 1.1em;
-    font-style: italic;
-    color: #FF9900;
-    text-align: center;
 }
 .weapon-name {
     font-size: 1.2em;
@@ -158,13 +169,21 @@ hr {
 .color-icebeam { color: #11b3d8; }
 .color-plasmabeam { color: #ef0505; }
 
-/* === FOOTER === */
-.footer {
-    text-align: center;
-    padding: 20px;
-    color: #AAAAAA;
-    font-size: 0.9em;
-    border-top: 2px solid #FF9900;
+/* === YOUTUBE & BILDER === */
+.music-player iframe {
+    width: 100%;
+    border-radius: 8px;
+}
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+hr {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 225, 0, 0), rgba(255, 225, 0, 0.75), rgba(255, 225, 0, 0));
+    margin: 20px 0;
 }
 
 /* === HINTERGRUND-ANIMATIONEN === */
