@@ -1,248 +1,328 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* === GRUNDEINSTELLUNGEN === */
+:root {
+    /* Farbpalette */
+    --primary-orange: #FF9900;
+    --primary-cyan: #66ffff;
+    --hover-pink: #ff01c4;
+    --visited-magenta: #FF00FF;
+    --active-yellow: #ffff00;
+    --border-gold: #ffe100;
+    
+    /* Textfarben */
+    --text-light: #fff;
+    --text-grey: #AAAAAA;
+    --text-scan-green: #00ff00;
+
+    /* Hintergrundfarben */
+    --background-dark: #000;
+    --background-box: #06062a;
+    --background-ticker: #111111;
+    --background-nav: rgba(2, 38, 45, 0.95);
+
+    /* UI-Farben & Effekte */
+    --shadow-glow: rgba(105, 208, 255, 0.6);
+    --shadow-glow-hover: rgba(105, 208, 255, 0.8);
+}
+
 body {
-    background-color: #000;
+    background-color: var(--background-dark);
     background-image: url('images/space.gif');
-    color: #fff;
+    color: var(--text-light);
     font-family: 'Roboto', Verdana, sans-serif;
     margin: 0;
-    background-attachment: relative;
+    background-attachment: fixed; /* 'fixed' für einen besseren Parallax-Effekt */
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
-/* === LINKS === */
+/* === 2. TYPOGRAPHIE & LINKS === */
+/* ============================================= */
+
 a { 
-    color: #66ffff; 
+    color: var(--primary-cyan); 
+    text-decoration: none; /* Unterstreichung standardmäßig aus */
     transition: color 0.2s ease-in-out;
 }
 a:hover {
-    color: #ff01c4;
+    color: var(--hover-pink);
+    text-decoration: underline; /* Unterstreichung nur bei Hover */
 }
 a:visited { 
-    color: #FF00FF; 
+    color: var(--visited-magenta); 
 }
 a:active { 
-    color: #ffff00; 
+    color: var(--active-yellow); 
 }
 
-/* === LAYOUT-CONTAINER (Zentrierung) === */
+h1, h2, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Impact", "Arial Black", sans-serif;
+    font-size: 3.5em;
+    color: var(--primary-orange);
+    margin: 0;
+    text-shadow: 2px 2px 5px #000;
+}
+
+h2 {
+    font-family: Arial, sans-serif;
+    font-size: 1.5em;
+    color: var(--text-grey);
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--primary-orange);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 225, 0, 0), var(--border-gold), rgba(255, 225, 0, 0));
+    margin: 20px 0;
+}
+
+/* === 3. LAYOUT-STRUKTUR === */
+/* ============================================= */
+
 .container {
     max-width: 980px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* === HEADER & FOOTER (Full-Width) === */
+.header, .footer {
+    width: 100%;
+}
+
+/* === 4. HEADER, FOOTER & TICKER === */
+/* ============================================= */
+
 .header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    justify-content: center; /* Zentriert den Inhalt besser */
+    padding: 20px;
     background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
     background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid var(--primary-orange);
 }
+
 .header-logo {
     width: 120px;
-    margin-right: 20px;
+    margin-right: 25px;
 }
-.header h1 {
-    font-family: "Impact", "Arial Black", sans-serif;
-    font-size: 3.5em;
-    color: #FF9900;
-    margin: 0;
-}
-.header h2 {
-    font-family: Arial, sans-serif;
-    font-size: 1.5em;
-    color: #CCCCCC;
-    margin: 0;
-}
+
 .footer {
     text-align: center;
     padding: 20px;
-    color: #AAAAAA;
+    color: var(--text-grey);
     font-size: 0.9em;
-    border-top: 2px solid #FF9900;
+    border-top: 2px solid var(--primary-orange);
+    margin-top: 40px;
 }
 
-/* === TICKER === */
 .ticker {
-    background-color: #111111;
-    padding: 10px;
+    background-color: var(--background-ticker);
+    padding: 10px 0;
     overflow: hidden;
     white-space: nowrap;
 }
+
 .ticker-text {
-    color: #00ff00;
+    color: var(--text-scan-green);
     font-size: 1.1em;
     display: inline-block;
+    padding-left: 100%; /* Startet außerhalb des Bildschirms */
     animation: scroll-left 25s linear infinite;
 }
-@keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
 
-/* === HERO-SEKTION === */
-.hero-section {
-    padding: 30px 0;
-    text-align: center;
-}
-.hero-section .cover-image {
-    max-width: 320px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8);
-}
-.cover-caption {
-    text-align: center;
-    font-size: 0.8em;
-    color: #AAAAAA;
-    font-style: italic;
-}
+/* === 5. NAVIGATION === */
+/* ============================================= */
 
-/* === STICKY NAVIGATION === */
 .nav-sticky {
     position: sticky;
     top: 0;
-    background-color: rgba(2, 38, 45, 0.95);
-    padding: 10px 0;
-    z-index: 10;
-    border-bottom: 1px solid #ffe100;
+    background-color: var(--background-nav);
+    z-index: 1000; /* Hoher z-index, damit es über allem bleibt */
+    border-bottom: 1px solid var(--border-gold);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
+
 .nav-sticky ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 15px 0; /* Mehr vertikaler Abstand */
 }
 
-/* === HAUPT-INHALT === */
-.main-content {
-    padding-top: 30px;
+.nav-sticky ul li a {
+    padding: 15px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
+
+.nav-sticky ul li a.active {
+    color: var(--active-yellow);
+    text-shadow: 0 0 5px var(--active-yellow);
+    text-decoration: underline;
+}
+
+
+/* === 6. HAUPTINHALT & SEKTIONEN === */
+/* ============================================= */
+
+.main-content {
+    padding-top: 40px;
+}
+
 .content-box {
-    background-color: #06062a;
+    background-color: var(--background-box);
     padding: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     border-radius: 8px;
-    border: 1px solid #ffe100;
-    box-shadow: 0 0 10px rgba(105, 208, 255, 0.6);
+    border: 1px solid var(--border-gold);
+    box-shadow: 0 0 10px var(--shadow-glow);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
 .content-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px 5px rgba(105, 208, 255, 0.8);
+    transform: translateY(-5px) scale(1.02); /* Leichter Zoom-Effekt */
+    box-shadow: 0 0 20px 5px var(--shadow-glow-hover);
 }
-.content-box h3 {
-    color: #FF9900;
-    margin-top: 0;
+
+/* === 7. SPEZIFISCHE SEKTIONEN (Hero, Waffen, etc.) === */
+/* ============================================= */
+
+.hero-section {
     text-align: center;
 }
 
-/* === WAFFEN-SEKTION (GRID) === */
+.hero-section .cover-image {
+    max-width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 5px var(--shadow-glow-hover);
+}
+
+.cover-caption {
+    font-size: 0.9em;
+    color: var(--text-grey);
+    font-style: italic;
+    margin-top: 10px;
+}
+
 .weapon-progression {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
+
 .weapon-item {
     text-align: center;
 }
+
 .weapon-item img {
     width: 100%;
     max-width: 150px;
     height: auto;
     display: block;
     margin: 10px auto;
+    border-radius: 4px;
 }
+
 .weapon-name {
     font-size: 1.2em;
     font-weight: bold;
-    text-decoration-line: underline;
-    text-decoration-color: #FF9900;
     display: block;
     margin-bottom: 5px;
 }
+
+/* Waffenfarben */
 .color-powerbeam { color: #ffe500; }
 .color-wavebeam { color: #ff01c4; }
 .color-icebeam { color: #11b3d8; }
 .color-plasmabeam { color: #ef0505; }
 
-/* === YOUTUBE & BILDER === */
-.music-player iframe {
+
+/* === 8. MEDIENELEMENTE (Bilder, Videos) === */
+/* ============================================= */
+
+.video-container iframe {
     width: 100%;
     border-radius: 8px;
-}
-.img-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-hr {
-    border: none;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(255, 225, 0, 0), rgba(255, 225, 0, 0.75), rgba(255, 225, 0, 0));
-    margin: 20px 0;
+    border: 1px solid var(--border-gold);
 }
 
-/* === HINTERGRUND-ANIMATIONEN === */
-@keyframes fly-across-1 {
-    0% { transform: translateX(-150px) translateY(10vh) rotate(-15deg); opacity: 0.6; }
-    100% { transform: translateX(100vw) translateY(80vh) rotate(15deg); opacity: 0.6; }
+.img-center {
+    display: block;
+    margin: 20px auto; /* Mehr Abstand */
+    border-radius: 4px;
 }
-@keyframes fly-across-2 {
-    0% { transform: translateX(-150px) translateY(50vh) rotate(5deg); opacity: 0.5; }
-    100% { transform: translateX(100vw) translateY(20vh) rotate(-5deg); opacity: 0.5; }
-}
-@keyframes fly-across-3 {
-    0% { transform: translateX(-150px) translateY(85vh) rotate(10deg); opacity: 0.4; }
-    100% { transform: translateX(100vw) translateY(40vh) rotate(0deg); opacity: 0.4; }
-}
-@keyframes fly-across-4 {
-    0% { transform: translateX(-150px) translateY(30vh) rotate(-5deg); opacity: 0.6; }
-    100% { transform: translateX(100vw) translateY(60vh) rotate(10deg); opacity: 0.6; }
-}
-@keyframes fly-across-5 {
-    0% { transform: translateX(-150px) translateY(70vh) rotate(0deg); opacity: 0.7; }
-    100% { transform: translateX(100vw) translateY(15vh) rotate(-10deg); opacity: 0.3; }
-}
+
+
+/* === 9. HINTERGRUND-ANIMATIONEN === */
+/* ============================================= */
+
 .floating-object {
     position: fixed;
-    z-index: -1;
+    z-index: -1; /* Hinter allem */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+    opacity: 0.5; /* Generelle Transparenz */
 }
-.type-1 {
+
+.type-1 { /* Samus' Schiff */
     width: 120px;
-    animation-name: fly-across-1;
-    animation-duration: 20s;
+    animation: fly-across-1 20s linear infinite;
 }
-.type-2 {
+.type-2 { /* Asteroid 1 */
     width: 50px;
-    animation-name: fly-across-2;
-    animation-duration: 9s;
-    animation-delay: -5s;
+    animation: fly-across-2 25s linear infinite -5s; /* Längere Dauer, anderer Delay */
 }
-.type-3 {
+.type-3 { /* Asteroid 2 */
     width: 80px;
-    animation-name: fly-across-3;
-    animation-duration: 14s;
-    animation-delay: -10s;
+    animation: fly-across-3 18s linear infinite -10s;
 }
-.type-4 {
+.type-4 { /* Asteroid 3 */
     width: 100px;
-    animation-name: fly-across-4;
-    animation-duration: 22s;
-    animation-delay: -8s;
+    animation: fly-across-4 30s linear infinite -8s;
 }
-.type-5 {
+.type-5 { /* Anderes Schiff */
     width: 140px;
-    animation-name: fly-across-5;
-    animation-duration: 12s;
-    animation-delay: -2s;
+    animation: fly-across-5 15s linear infinite -2s;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes fly-across-1 {
+    0% { transform: translateX(-150px) translateY(10vh) rotate(-15deg); }
+    100% { transform: translateX(100vw) translateY(80vh) rotate(15deg); }
+}
+@keyframes fly-across-2 {
+    0% { transform: translateX(-150px) translateY(50vh) rotate(5deg); }
+    100% { transform: translateX(100vw) translateY(20vh) rotate(-5deg); }
+}
+@keyframes fly-across-3 {
+    0% { transform: translateX(-150px) translateY(85vh) rotate(10deg); }
+    100% { transform: translateX(100vw) translateY(40vh) rotate(0deg); }
+}
+@keyframes fly-across-4 {
+    0% { transform: translateX(100vw) translateY(30vh) rotate(-5deg); } /* Startet von rechts */
+    100% { transform: translateX(-150px) translateY(60vh) rotate(10deg); }
+}
+@keyframes fly-across-5 {
+    0% { transform: translateX(-150px) translateY(70vh) rotate(0deg); }
+    100% { transform: translateX(100vw) translateY(15vh) rotate(-10deg); }
 }
