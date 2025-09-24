@@ -109,8 +109,8 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center; /* Zentriert den Inhalt besser */
-    padding: 20px;
-    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmRjMDY1d3lxZjFyMTB3bDg3eGl4bHBucm91d2dvcTdpZ2p2NHZ3NyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/L3Y45TZEmhSmY/giphy.gif');
+    padding: 25px;
+    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTV6MHh5NTQ3d3ozNWVvMW15bnIyZHpibmloNDJ2dXRnY2I5MXo4dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XXnSnRWh9iuakOY2wA/giphy.gif');
     background-size: cover;
     background-position: center;
     border-bottom: 2px solid var(--primary-orange);

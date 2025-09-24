@@ -35,12 +35,13 @@
 
         <nav class="nav-sticky">
             <ul>
-                <li><a href="#mission">Missions-Briefing</a></li>
+                <li><a href="#mission" class="activ">Missions-Briefing</a></li>
                 <li><a href="#kernelemente">Kernelemente</a></li>
                 <li><a href="Youtube_videos.html">youtube</a></li>
                 <li><a href="visoren.html">Visoren</a></li>
                 <li><a href="waffen.html">Waffen</a></li>
                 <li><a href="bosse.html">Gefahrenanalyse</a></li>
+                <li><a href="spiel.php">Kristall-Jagd</a></li>
             </ul>
         </nav>
 
