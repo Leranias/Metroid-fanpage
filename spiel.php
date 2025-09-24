@@ -132,149 +132,7 @@ if (!$_SESSION['game_over'] && !$_SESSION['game_won']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>METROID PRIME - Phazon Crystal Hunt</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .game-container {
-            position: relative;
-            width: 800px;
-            height: 500px;
-            margin: 0 auto;
-            background: linear-gradient(45deg, #001122, #003344);
-            border: 2px solid var(--border-gold);
-            border-radius: 10px;
-            overflow: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 153, 0, 0.1) 0%, transparent 50%);
-        }
-        
-        .game-hud {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            display: flex;
-            justify-content: space-between;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            z-index: 100;
-        }
-        
-        .crystal {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .crystal:hover {
-            transform: scale(1.2);
-            filter: brightness(1.5);
-        }
-        
-        .crystal.found {
-            display: none;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
-        }
-        
-        @keyframes collect {
-            0% { transform: scale(1) rotate(0deg); opacity: 1; }
-            100% { transform: scale(0) rotate(360deg); opacity: 0; }
-        }
-        
-        .crystal.collecting {
-            animation: collect 0.5s ease-in forwards;
-            pointer-events: none;
-        }
-        
-        .game-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid var(--border-gold);
-            z-index: 200;
-        }
-        
-        .game-message h3 {
-            color: var(--primary-orange);
-            margin-top: 0;
-        }
-        
-        .game-controls {
-            margin-top: 20px;
-        }
-        
-        .btn-game {
-            background: linear-gradient(45deg, var(--primary-orange), #ff6600);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            margin: 5px;
-        }
-        
-        .btn-game:hover {
-            background: linear-gradient(45deg, #ff6600, var(--primary-orange));
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 153, 0, 0.4);
-        }
-        
-        .progress-bar {
-            width: 200px;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-gold);
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--text-scan-green), var(--primary-cyan));
-            transition: width 0.3s ease;
-        }
-        
-        .time-warning {
-            color: #ff4444 !important;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
-        
-        .scanner-line {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
-            animation: scan 3s linear infinite;
-            opacity: 0.6;
-        }
-        
-        @keyframes scan {
-            0% { top: 60px; }
-            100% { top: 480px; }
-        }
-    </style>
+
 </head>
 <body>
     <img src="images/Mp2gunship.jpg" class="floating-object type-1" alt="Samus Arans Raumschiff">
@@ -283,31 +141,7 @@ if (!$_SESSION['game_over'] && !$_SESSION['game_won']) {
     <img src="images/asteroid3.jpg" class="floating-object type-4" alt="asteroid">
     <img src="images/schiff.jpg" class="floating-object type-5" alt="spaceship">
 
-    <header class="header">
-        <img src="images/samusbattle.gif" alt="Animierte Samus Aran" class="header-logo">
-        <div>
-            <h1>THE TALLON IV ARCHIVES</h1>
-            <h2>Eine Metroid Prime Fan-Datenbank</h2>
-        </div>
-    </header>
-
-    <div class="ticker">
-        <p class="ticker-text">*** MISSION AKTIV: Phazon-Kristalle lokalisieren! +++ Scanvorgang läuft... +++ WARNUNG: Begrenzte Zeit verfügbar! ***</p>
-    </div>
-
-    <nav class="nav-sticky">
-        <div class="container">
-            <ul>
-                <li><a href="index.php">Missions-Briefing</a></li>
-                <li><a href="index.php">Kernelemente</a></li>
-                <li><a href="Youtube_videos.html">YouTube</a></li>
-                <li><a href="visoren.html">Visoren</a></li>
-                <li><a href="waffen.html">Waffen</a></li>
-                <li><a href="bosse.html">Gefahrenanalyse</a></li>
-                <li><a href="spiel.php" class="active">Kristall-Jagd</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include 'header.php'; ?>
 
     <div class="container">
         <main class="main-content">
@@ -407,14 +241,7 @@ if (!$_SESSION['game_over'] && !$_SESSION['game_won']) {
         </main>
     </div>
 
-    <footer id="links" class="footer">
-        <p>Diese Seite ist eine private Fan-Hommage und nicht mit Nintendo verbunden.</p>
-        <p>
-            <a href="https://metroid.fandom.com/de/wiki/Metroid_Wiki" target="_blank">Metroid Wiki</a> | 
-            <a href="https://www.nintendo.com/de-de/Spiele/Nintendo-GameCube/Metroid-Prime-268423.html" target="_blank">Offizielle Seite (Archiv)</a>
-        </p>
-        <p><br>Layout & Design im Stil von modern Von Leranias im Rahmen der umschulung erstellt MODERNES CSS ROCKT.</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <script>
         let gameRunning = <?php echo (!$_SESSION['game_over'] && !$_SESSION['game_won']) ? 'true' : 'false'; ?>;

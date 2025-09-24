@@ -13,31 +13,7 @@
     <img src="images/asteroid3.jpg" class="floating-object type-4" alt="asteroid">
     <img src="images/schiff.jpg" class="floating-object type-5" alt="spaceship">
 
-    <header class="header">
-        <img src="images/samusbattle.gif" alt="Animierte Samus Aran" class="header-logo">
-        <div>
-            <h1>THE TALLON IV ARCHIVES</h1>
-            <h2>Eine Metroid Prime Fan-Datenbank</h2>
-        </div>
-    </header>
-
-    <div class="ticker">
-        <p class="ticker-text">*** Willkommen, Kopfgeldjäger! +++ Scanvorgang abgeschlossen: Planet Tallon IV +++ WARNUNG: Hohe Phazon-Konzentration registriert! ***</p>
-    </div>
-
-    <nav class="nav-sticky">
-        <div class="container"> 
-             <ul>
-                <li><a href="index.php">Missions-Briefing</a></li>
-                <li><a href="index.php">Kernelemente</a></li>
-                <li><a href="Youtube_videos.html">youtube</a></li>
-                <li><a href="visoren.html" class="active">Visoren</a></li>
-                <li><a href="waffen.html">Waffen</a></li>
-                <li><a href="bosse.html">Gefahrenanalyse</a></li>
-                <li><a href="spiel.php" >Kristall-Jagd</a></li>
-            </ul>
-        </div>
-    </nav>
+    <?php include 'header.php'; ?>
 
     <div class="container">
         <main class="main-content">
@@ -87,14 +63,7 @@
             </main>
     </div> 
 
-    <footer id="links" class="footer">
-        <p>Diese Seite ist eine private Fan-Hommage und nicht mit Nintendo verbunden.</p>
-        <p>
-            <a href="https://metroid.fandom.com/de/wiki/Metroid_Wiki" target="_blank">Metroid Wiki</a> | 
-            <a href="https://www.nintendo.com/de-de/Spiele/Nintendo-GameCube/Metroid-Prime-268423.html" target="_blank">Offizielle Seite (Archiv)</a>
-        </p>
-        <p><br>Layout & Design im Stil von modern Von Leranias im Rahmen der umschulung erstellt MODERNES CSS ROCKT.</p>
-    </footer>
+    <?php include 'footer.php'; ?>
 
 </body>
 </html>

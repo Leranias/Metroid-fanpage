@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="de">
+<!DOCTYPE php>
+<php lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +37,10 @@
             <ul>
                 <li><a href="#mission" class="activ">Missions-Briefing</a></li>
                 <li><a href="#kernelemente">Kernelemente</a></li>
-                <li><a href="Youtube_videos.html">youtube</a></li>
-                <li><a href="visoren.html">Visoren</a></li>
-                <li><a href="waffen.html">Waffen</a></li>
-                <li><a href="bosse.html">Gefahrenanalyse</a></li>
+                <li><a href="Youtube_videos.php">youtube</a></li>
+                <li><a href="visoren.php">Visoren</a></li>
+                <li><a href="waffen.php">Waffen</a></li>
+                <li><a href="bosse.php">Gefahrenanalyse</a></li>
                 <li><a href="spiel.php">Kristall-Jagd</a></li>
             </ul>
         </nav>
@@ -61,14 +61,8 @@
             </section>
         </main>
 
-    </div> <footer id="links" class="footer">
-        <p>Diese Seite ist eine private Fan-Hommage und nicht mit Nintendo verbunden.</p>
-        <p>
-            <a href="https://metroid.fandom.com/de/wiki/Metroid_Wiki">Metroid Wiki</a> | 
-            <a href="https://www.nintendo.com/de-de/Spiele/Nintendo-GameCube/Metroid-Prime-268423.html">Offizielle Seite (Archiv)</a>
-        </p>
-        <p><br>Layout & Design im Stil von modern Von Leranias im Rahmen der umschulung erstellt MODERNES CSS ROCKT.</p>
-    </footer>
+    </div> 
+    <?php include 'footer.php'; ?>
 
     <map name="covermap">
         <area shape="rect" coords="76,159,215,400" href="images/MetroidPrimeLogo.jpg" target="_blank" alt="Metroid logo">
@@ -76,4 +70,4 @@
     </map>
 
 </body>
-</html>
+</php>
