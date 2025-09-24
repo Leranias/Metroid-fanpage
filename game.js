@@ -1,4 +1,4 @@
-// game.js
+// game.js ausgelagerte logik für das spiel
 
 document.addEventListener('DOMContentLoaded', () => {
     const gameContainer = document.getElementById('game-container');

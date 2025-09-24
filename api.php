@@ -1,5 +1,5 @@
 <?php
-// api.php die soll der einzige ansprechpartner für java sein
+// api.php die soll der einzige ansprechpartner für javascript sein
 
 require_once 'game_logic.php';
 

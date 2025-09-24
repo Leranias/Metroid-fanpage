@@ -108,12 +108,14 @@ hr {
 .header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Zentriert den Inhalt besser */
+    justify-content: center;
     padding: 25px;
-    background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExOTV6MHh5NTQ3d3ozNWVvMW15bnIyZHpibmloNDJ2dXRnY2I5MXo4dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/XXnSnRWh9iuakOY2wA/giphy.gif');
-    background-size: cover;
-    background-position: center;
+    background-image: url('images/6V8jVUE-metroid-prime-wallpaper.jpg');
+    background-size: cover; /* Ensures the image covers the area */
+    background-position: top; /* Displays only the top half of the image */
     border-bottom: 2px solid var(--primary-orange);
+    height: 25vh; /* Adjusts the height to show only the top half */
+    overflow: hidden; /* Ensures the rest of the image is not visible */
 }
 
 .header-logo {
@@ -145,36 +147,94 @@ hr {
     animation: scroll-left 25s linear infinite;
 }
 
-/* === 5. NAVIGATION === */
+/* === 5. NAVIGATION (FUTURISTIC UPGRADE) === */
 /* ============================================= */
 
 .nav-sticky {
     position: sticky;
     top: 0;
-    background-color: var(--background-nav);
-    z-index: 1000; /* Hoher z-index, damit es über allem bleibt */
+    /* "Frosted Glass" Effekt für einen moderneren Look */
+    background-color: rgba(2, 38, 45, 0.85); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Für Safari-Kompatibilität */
+    z-index: 1000;
     border-bottom: 1px solid var(--border-gold);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .nav-sticky ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style: none;
     margin: 0;
-    padding: 15px 0; /* Mehr vertikaler Abstand */
+    padding: 10px 0; /* Vertikales Padding leicht reduziert für einen schlankeren Look */
 }
 
 .nav-sticky ul li a {
+    position: relative; /* Wichtig für die Positionierung des ::after Pseudo-Elements */
     padding: 15px 20px;
     font-weight: bold;
     text-transform: uppercase;
+    white-space: nowrap;
+    text-decoration: none; /* Sicherstellen, dass keine Unterstreichung stört */
+    color: var(--primary-cyan);
+    
+    /* Leichter Standard-Glüheffekt */
+    text-shadow: 0 0 3px var(--primary-cyan), 0 0 5px rgba(102, 255, 255, 0.3);
+
+    /* Kantige, futuristische Form */
+    clip-path: polygon(15px 0%, 100% 0%, calc(100% - 15px) 100%, 0% 100%);
+    
+    /* Sanfte Übergänge für alle Effekte */
+    transition: all 0.3s ease-in-out;
 }
 
+/* Interaktions-Effekte: Hover & Aktiver Link */
+.nav-sticky ul li a:hover,
+.nav-sticky ul li a.active {
+    color: var(--hover-pink);
+    background-color: rgba(255, 1, 196, 0.1); /* Leichter Hintergrund-Glow */
+    transform: translateY(-2px); /* Hebt den Button leicht an */
+    
+    /* Verstärkter Glüheffekt bei Interaktion */
+    text-shadow: 0 0 5px var(--hover-pink), 0 0 10px var(--hover-pink), 0 0 15px rgba(255, 1, 196, 0.5);
+}
+
+/* Das animierte "Marker"-Element */
+.nav-sticky ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 8px; /* Position am unteren Rand des Links */
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 70%;
+    height: 2px;
+    background-color: var(--hover-pink);
+    
+    /* Startzustand: Unsichtbar und auf 0 Breite skaliert */
+    transform: scaleX(0);
+    
+    /* Animation für das Erscheinen */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Sichtbar machen des Markers bei Hover/Aktiv */
+.nav-sticky ul li a:hover::after,
+.nav-sticky ul li a.active::after {
+    transform: scaleX(1); /* Auf volle Breite animieren */
+}
+
+/* Spezifische Anpassung für den "active" Zustand, der nicht gehovert wird */
 .nav-sticky ul li a.active {
     color: var(--active-yellow);
-    text-shadow: 0 0 5px var(--active-yellow);
-    text-decoration: underline;
+    text-shadow: 0 0 5px var(--active-yellow), 0 0 10px var(--active-yellow);
+    background-color: rgba(255, 255, 0, 0.1);
+}
+
+.nav-sticky ul li a.active::after {
+    background-color: var(--active-yellow);
+    transform: scaleX(1);
 }
 
 
@@ -326,147 +386,147 @@ hr {
     0% { transform: translateX(-150px) translateY(70vh) rotate(0deg); }
     100% { transform: translateX(100vw) translateY(15vh) rotate(-10deg); }
 }
-        .game-container {
-            position: relative;
-            width: 800px;
-            height: 500px;
-            margin: 0 auto;
-            background: linear-gradient(45deg, #001122, #003344);
-            border: 2px solid var(--border-gold);
-            border-radius: 10px;
-            overflow: hidden;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 153, 0, 0.1) 0%, transparent 50%);
-        }
-        
-        .game-hud {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            display: flex;
-            justify-content: space-between;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            z-index: 100;
-        }
-        
-        .crystal {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        .crystal:hover {
-            transform: scale(1.2);
-            filter: brightness(1.5);
-        }
-        
-        .crystal.found {
-            display: none;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 0.7; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.1); }
-        }
-        
-        @keyframes collect {
-            0% { transform: scale(1) rotate(0deg); opacity: 1; }
-            100% { transform: scale(0) rotate(360deg); opacity: 0; }
-        }
-        
-        
-        
-        /* === SPIEL-SPEZIFISCHE STILE === */
-        .crystal.collecting {
-            animation: collect 0.5s ease-in forwards;
-            pointer-events: none;
-        }
-        
-        .game-message {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 30px;
-            border-radius: 10px;
-            border: 2px solid var(--border-gold);
-            z-index: 200;
-        }
-        
-        .game-message h3 {
-            color: var(--primary-orange);
-            margin-top: 0;
-        }
-        
-        .game-controls {
-            margin-top: 20px;
-        }
-        
-        .btn-game {
-            background: linear-gradient(45deg, var(--primary-orange), #ff6600);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            margin: 5px;
-        }
-        
-        .btn-game:hover {
-            background: linear-gradient(45deg, #ff6600, var(--primary-orange));
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(255, 153, 0, 0.4);
-        }
-        
-        .progress-bar {
-            width: 200px;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-gold);
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--text-scan-green), var(--primary-cyan));
-            transition: width 0.3s ease;
-        }
-        
-        .time-warning {
-            color: #ff4444 !important;
-            animation: blink 1s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
-        
-        .scanner-line {
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
-            animation: scan 3s linear infinite;
-            opacity: 0.6;
-        }
-        
-        @keyframes scan {
-            0% { top: 60px; }
-            100% { top: 480px; }
-        }
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background: linear-gradient(45deg, #001122, #003344);
+    border: 2px solid var(--border-gold);
+    border-radius: 10px;
+    overflow: hidden;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 153, 0, 0.1) 0%, transparent 50%);
+}
+
+.game-hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    z-index: 100;
+}
+
+.crystal {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.crystal:hover {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+
+.crystal.found {
+    display: none;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes collect {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+
+
+/* === SPIEL-SPEZIFISCHE STILE === */
+.crystal.collecting {
+    animation: collect 0.5s ease-in forwards;
+    pointer-events: none;
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--border-gold);
+    z-index: 200;
+}
+
+.game-message h3 {
+    color: var(--primary-orange);
+    margin-top: 0;
+}
+
+.game-controls {
+    margin-top: 20px;
+}
+
+.btn-game {
+    background: linear-gradient(45deg, var(--primary-orange), #ff6600);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+.btn-game:hover {
+    background: linear-gradient(45deg, #ff6600, var(--primary-orange));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 153, 0, 0.4);
+}
+
+.progress-bar {
+    width: 200px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-gold);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--text-scan-green), var(--primary-cyan));
+    transition: width 0.3s ease;
+}
+
+.time-warning {
+    color: #ff4444 !important;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.scanner-line {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+    animation: scan 3s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes scan {
+    0% { top: 60px; }
+    100% { top: 480px; }
+}
