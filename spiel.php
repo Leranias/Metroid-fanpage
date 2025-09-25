@@ -1,4 +1,15 @@
 <?php
+
+// spiel.php - GESICHERTER BEREICH
+
+session_start();
+
+// Prüfen, ob der User eingeloggt ist. Wenn nicht, umleiten.
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login_form.php?redirect=spiel');
+    exit;
+}
+
 // spiel.php
 require_once 'game_logic.php';
 $game_state = get_game_state();
