@@ -13,38 +13,9 @@
     <img src="images/asteroid3.jpg" class="floating-object type-4" alt="asteroid">
     <img src="images/schiff.jpg" class="floating-object type-5" alt="spaceship">
 
-    <header class="header">
-        <img src="images/samusbattle.gif" alt="Animierte Samus Aran" class="header-logo">
-        <div>
-            <h1>THE TALLON IV ARCHIVES</h1>
-            <h2>Eine Metroid Prime Fan-Datenbank</h2>
-        </div>
-    </header>
+    <?php include 'header.php'; ?>
 
-    <div class="ticker">
-        <p class="ticker-text">*** Willkommen, Kopfgeldjäger! +++ Scanvorgang abgeschlossen: Planet Tallon IV +++ WARNUNG: Hohe Phazon-Konzentration registriert! ***</p>
-    </div>
-
-    <div class="container">
-
-        <section id="hero" class="hero-section">
-            <img src="images/MetroidPrimebox.jpg" alt="Das Metroid Prime Gamecube Cover" class="cover-image" usemap="#covermap">
-            <p class="cover-caption">Klicke auf das Logo oder Samus!</p>
-            <hr>
-        </section>
-
-        <nav class="nav-sticky">
-            <ul>
-                <li><a href="#mission" class="activ">Missions-Briefing</a></li>
-                <li><a href="#kernelemente">Kernelemente</a></li>
-                <li><a href="Youtube_videos.php">youtube</a></li>
-                <li><a href="visoren.php">Visoren</a></li>
-                <li><a href="waffen.php">Waffen</a></li>
-                <li><a href="bosse.php">Gefahrenanalyse</a></li>
-                <li><a href="spiel.php">Kristall-Jagd</a></li>
-            </ul>
-        </nav>
-
+    
         <main class="main-content">
             <section id="mission" class="content-box">
                 <h3>Missions-Briefing: Notruf von der Orpheon</h3>

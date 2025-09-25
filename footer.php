@@ -1,7 +1,5 @@
 </main>
-    </div>
-
-    <footer id="links" class="footer">
+    </div> <footer id="links" class="footer">
         <p>Diese Seite ist eine private Fan-Hommage und nicht mit Nintendo verbunden.</p>
         <p>
             <a href="https://metroid.fandom.com/de/wiki/Metroid_Wiki" target="_blank">Metroid Wiki</a> |
