@@ -1,3 +1,7 @@
+
+
+
+
 </main>
     </div> <footer id="links" class="footer">
         <p>Diese Seite ist eine private Fan-Hommage und nicht mit Nintendo verbunden.</p>

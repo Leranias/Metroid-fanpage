@@ -13,11 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Bitte alle Felder ausfüllen.");
     }
 
-    // Passwort sicher hashen
+    // Passwort sicher hashen das wichtig niemals ein passwort ohne hash speichern
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
-
+    //
     try {
-        // Prepared Statement gegen SQL-Injection
+        // Prepared Statement gegen SQL-Injection 
         $sql = "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$username, $email, $password_hash]);

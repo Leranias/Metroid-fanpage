@@ -3,8 +3,8 @@
 
 $host = '127.0.0.1'; // oder 'localhost'
 $db   = 'metroid_fanpage';
-$user = 'root'; // Dein Datenbank-Benutzer
-$pass = '';     // Dein Datenbank-Passwort
+$user = 'root'; // der database user
+$pass = '';     // das  database password
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -19,3 +19,4 @@ try {
 } catch (\PDOException $e) {
      throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
+?>
